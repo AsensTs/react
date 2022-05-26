@@ -1,0 +1,209 @@
+@import './variable.scss';
+
+.app {
+  min-width: 768px;
+}
+.bgColor { // 背景颜色
+  background-color: $gray-2
+}
+.header {
+  background-color: $headerBgColor;
+  padding: 0;
+}
+.sider {
+  background-color: $gray-1;
+  height: 100vh;
+  width: $silderW;
+}
+.content {
+  background-color: $contentBgColor;
+}
+.footer {
+  background-color: $gray-1;
+}
+
+// menu 样式
+.nav-sider {
+  .nav-bar {
+    height: 100%;
+    .nav-list {
+      flex: 10;
+      height: 73%;
+      overflow: auto;
+    }
+    .nav-collapsed {
+      text-align: right;
+      padding: 0 5%;
+    }
+    .nav-collapsed-center {
+      text-align: center;
+      padding: 0;
+    }
+  }
+
+  .login-out {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: $gray-12;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-20px);
+  }
+}
+.app-top {
+  text-align: left;
+  font-size: 16px;
+  padding: 12% 12% 5% 12%;
+  margin-bottom: 10px;
+  display: flex;
+  overflow: hidden;
+  .app-logo {
+    width: 30%;
+    border: 1px solid $shadow;
+    box-shadow: 0 0 10px $shadow;
+    border-radius: 10%;
+    padding: 2%;
+    min-width: 60px;
+    min-height: 60px;
+    img {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+.app-titles {
+  padding-left: 20px;
+}
+.app-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.app-subtitle {
+  font-size: 16px;
+}
+// menu 样式
+
+// header 样式 
+.header {
+  .header-top {
+    display: flex;
+    .top-text {
+      width: 80%;
+      padding-left: 2%;
+    }
+    .top-icons {
+      width: 20%;
+      height: 36px;
+      line-height: 36px;
+      display: flex;
+      justify-content: right;
+      margin: 14px 0;
+      padding-right: 3%; 
+      .top-icon {
+        font-size: 3vh;
+        margin: 0 4%; 
+      }
+      .user {
+        width: 36px;
+        text-align: center;
+        background-color: $gray-12;
+        border-radius: 50%;
+        color: #fff;
+      }
+      .bell {
+        position: relative;
+        .dot {
+          position: absolute;
+          top: 20%;
+          right: 0;
+          width: 10px;
+          height: 10px;
+          background-color: red;
+          border-radius: 50%;
+        }
+      }
+      .setting {
+        cursor: pointer;
+      }
+    }
+    .setting-container {
+      position: absolute;
+      right: 0;
+      height: 100%;
+    }
+  }
+}
+// header 样式 
+
+// content 样式
+.content {
+  display: flex;
+  .content-l {
+    flex: 7;
+  }
+  .content-r {
+    flex: 2;
+  }
+}
+// content 样式
+
+.footer {
+  padding: 24px !important;
+  .calendar {
+    width: 100%;
+    min-width: 310px;
+    padding: 0 10px;
+    box-shadow: 0 0 10px #eee;
+    border-radius: 10px;
+  }
+}
+
+
+// 公共样式
+.text { font-size: $fontSize; color: $fontColor; }
+.text-center { text-align: center; }
+.title {
+  font-size: $titleSize;
+  font-weight: bold;
+  color: $titleColor; 
+}
+
+// scrollbar
+.scrollbar::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width : $scrollWidth;  /*高宽分别对应横竖滚动条的尺寸*/
+  height: $scrollHeight;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px $scrollThumbColor;
+  background: $scrollThumbBgColor;
+}
+.scrollbar::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow: inset 0 0 5px $scrollTrackColor;
+  border-radius: 10px;
+  background: $scrollTrackBgColor;
+}
+
+// 省略号
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.ellipsis_wrap {
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+}
+
+

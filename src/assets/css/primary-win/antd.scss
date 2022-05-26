@@ -1,0 +1,39 @@
+@import './variable.scss';
+
+.ant-menu {
+  background-color: $gray-1;
+}
+.ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
+  border: none;
+}
+.ant-layout-footer {
+  padding: 0;
+  width: 20%;
+}
+.ant-menu-item {
+  border-radius: 20px;
+  margin: 0 10px;
+}
+.ant-menu-item-selected {
+  background-color: $navSelected !important;
+  color: $navTextColor !important;
+}
+.ant-menu-item-selected a {
+  color: $navTextColor;
+}
+.ant-menu-item-selected a:hover {
+  color: $navTextColor;
+}
+.ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after {
+  border: none;
+}
+
+.ant-btn:hover, .ant-btn:focus {
+  color: #620068;
+  background: #fff;
+  border-color: #8d0095;
+}
+
+.ant-picker-content th, .ant-picker-content td {
+  min-width: 20px;
+}

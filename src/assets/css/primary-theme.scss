@@ -1,0 +1,39 @@
+// theme-style
+.bgColor {
+  background-color: $gray-2
+}
+.header {
+  background-color: $gray-1;
+  padding: 0;
+}
+.sider, .ant-menu {
+  background-color: $gray-1;
+}
+.content {
+  background-color: $gray-4;
+}
+.footer {
+  background-color: $gray-1;
+}
+.app-header {
+  height: 64px;
+  display: flex;
+}
+.app-logo {
+  height: 100%;
+  img {
+    height: 100%;
+  }
+}
+.app-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 20px;
+}
+.nav-bar {
+  display: flex;
+  height: 100%;
+  .nav-list {
+    flex: 10;
+  }
+}
