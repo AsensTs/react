@@ -5,6 +5,8 @@
 }
 .ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
   border: none;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 .ant-layout-footer {
   padding: 0;
@@ -12,7 +14,6 @@
 }
 .ant-menu-item {
   border-radius: 20px;
-  margin: 0 10px;
 }
 .ant-menu-item-selected {
   background-color: $navSelected !important;

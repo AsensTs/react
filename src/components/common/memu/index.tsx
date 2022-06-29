@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Layout, Button } from 'antd'
 import { MenuUnfoldOutlined, MenuFoldOutlined, ImportOutlined} from '@ant-design/icons';
-import Menu from './nav-menu'
+import NavMenu from './menu'
 
 const { Sider } = Layout;
 
@@ -29,8 +29,8 @@ export default class navsider extends Component<Props, State> {
   render() {
     const { options } = this.props;
     const { collapsed } = this.state;
-    console.log(options);
-    
+    const collapse = options && undefined === options.collapse ? true : options.collapse ? true : false;
+
     return (
       <div className="nav-sider">
         <Sider className="sider" collapsed={collapsed}>
@@ -42,13 +42,18 @@ export default class navsider extends Component<Props, State> {
                 <p className="app-subtitle">{options.subtitle}</p>
               </div>
             </div>
-            <div className={['nav-collapsed', collapsed?'nav-collapsed-center':''].join(' ')} >
-              <Button onClick={()=>{this.onCollapse(collapsed)}} size="small">
-                {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
-              </Button>
-            </div>
+            { 
+              collapse ?
+              <div className={['nav-collapsed', collapsed?'nav-collapsed-center':''].join(' ')} >
+                <Button onClick={()=>{this.onCollapse(collapsed)}} size="small">
+                  { React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined) }
+                </Button>
+              </div>
+              : ''
+            }
+            
             <div className="nav-list scrollbar" >
-              <Menu menus={options.menus}></Menu>
+              <NavMenu menus={options.menus}></NavMenu>
             </div>
 
             <div className="login-out">

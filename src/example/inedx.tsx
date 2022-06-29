@@ -1,6 +1,51 @@
 import React, { Component } from 'react'
 import { Welcome } from './component'
 
+/*
+redux toolkit
+import { store } from '../store'
+import { increment, getState } from '../store/features/slice/counterSlice'
+console.log(store);
+store.dispatch(increment());
+console.log(store.getState().counter.value);
+console.log(getState(store))
+*/
+
+
+// 路由跳转
+// 不能在类组件中调用React挂钩“useHistory”。必须在React函数组件或自定义React钩子函数中调用React钩子。
+/* 函数组件中使用
+const { useHistory } = require('react-router-dom');
+const RouterTest = () => {
+  const history = useHistory();
+  history.push({pathname: '/123', search: "test=222"});
+  return '';
+}
+*/
+/*
+扩展：
+hooks (Router5.0之后出现的) 不能在类组件内使用
+  useHistory : 获取History对象
+  useLocation : 获取Location对象
+  useParams : 获取Params
+  useRouteMatch : 获取Match
+*/
+
+// withRouter是高阶组件，导入它并修饰 Inedx 组件。
+// 这会将路由属性（history，location，match）注入到类组件中。从props访问history对象。
+/* 类组件中使用
+const { withRouter } = require("react-router-dom");
+class Inedx extends Component<Props, State> {
+  ...
+  handleClick = () => {
+    this.porps.history.push( ...... )
+  }
+}
+
+export default withRouter(Index);
+*/
+
+
 type Props = {
   name: String,
   age: 18

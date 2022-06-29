@@ -43,4 +43,5 @@ export const icons: Icons = {
   BellOutlined: BellOutlined
 }
 
-export default icons
+
+

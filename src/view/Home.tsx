@@ -1,12 +1,12 @@
 import React from 'react'
 import { Layout } from 'antd'
 import Routes from '../router'
-import Navigation from '../components/common/nav-nemu/index'
+import Navigation from '../components/common/memu/index'
 import Headers from './Header'
 import Right from './Right'
-import options from '../components/common/nav-nemu/nav-options'
-import store from '../store'
-import {navMenus} from '../store/action'
+import options from '../components/common/memu/nav-options'
+import { store } from '../store'
+import { increment, getState } from '../store/features/counterSlice'
 
 const { Router, Route, Switch, Redirect } = require('react-router-dom');
 const { createHashHistory } = require('history');
@@ -19,7 +19,9 @@ class Home extends React.Component {
 
   componentDidMount() {
     console.log("componentDidMount -- 组件挂载完成");
-    store.dispatch(navMenus(options));
+    store.dispatch(increment());
+    const { value } = getState(store);
+    console.log(value);
   }
 
   render() {

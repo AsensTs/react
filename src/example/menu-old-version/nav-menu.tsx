@@ -1,8 +1,16 @@
+/*
+Warning: [antd: Menu] `children` will be removed in next major version. Please use `items` instead.
+
+andt 更新导致警告 https://ant.design/components/menu-cn/
+在 4.20.0 版本后，我们提供了
+的简写方式，有更好的性能和更方便的数据组织方式，开发者不再需要自行拼接 JSX。同时我们废弃了原先的写法，你还是可以在 4.x 继续使用，但会在控制台看到警告，并会在 5.0 后移除。
+
+*/
 import React from 'react'
 import { Menu } from 'antd'
-import icons from './icons'
-import store from '../../../store'
-import { navMenus } from '../../../store/action'
+import {icons} from './icons'
+import store from '../redux-old-store'
+import { navMenus } from '../redux-old-store/action'
 const { Link } = require('react-router-dom')
 const { SubMenu } = Menu;
 
