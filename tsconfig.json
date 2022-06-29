@@ -1,6 +1,16 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@style/*": ["./src/assets/style/*"],
+      "@store/*": ["./src/store/*"],
+      "@utils/*": ["./src/view/*"],
+      "@view/*": ["./src/view/*"]
+    },
     "lib": [
       "dom",
       "dom.iterable",
@@ -20,7 +30,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ]
+  "exclude": ["node_modules", "dist"]
 }

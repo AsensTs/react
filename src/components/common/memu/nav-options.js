@@ -1,6 +1,6 @@
 
 import React from 'react';
-import icons from '../../../util/icons'
+import icons from '../../../utils/icons'
 /**
  * key: 路由地址
  * label: 标题
