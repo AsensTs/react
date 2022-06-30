@@ -341,7 +341,7 @@ module.exports = function (webpackEnv) {
         '@components': path.resolve(__dirname, '../src/components'),
         '@style': path.resolve(__dirname, '../src/assets/style'),
         '@store': path.resolve(__dirname, '../src/store'),
-        '@util': path.resolve(__dirname, '../src/utils'),
+        '@utils': path.resolve(__dirname, '../src/utils'),
         '@view': path.resolve(__dirname, '../src/view'),
       },
       plugins: [

@@ -27,63 +27,44 @@ import icons from '../../../utils/icons'
     key: '/email',
     label: 'Email',
     icon: "MailOutlined",
-    disabled: true
+    disabled: "true"
   },
   {
+    key: "Group",
     label: 'Group',
     icon: 'AppstoreOutlined',
+    opened: "true",
     children: [
       {
-        group: "item1",
-        data: [
-          {
-            key: '/child1',
-            label: 'child1',
-          }, {
-            key: '/child2',
-            label: 'child2',
-          },
-        ]
+        key: '/child1',
+        label: 'child1',
+      }, {
+        key: '/child2',
+        label: 'child2',
       },
-      {
-        group: "item2",
-        data: [
-          {
-            key: '/child3',
-            label: 'child3',
-            children: [
-              {
-                key: '/son1.1',
-                label: 'son1.1',
-              },
-              {
-                key: '/son1.2',
-                label: 'son1.2',
-              }
-            ]
-          }
-        ]
-      }
     ]
   },
   {
+    key: "Submenu",
     label: 'Submenu',
     icon: 'AppstoreOutlined',
+    opened: "true",
     children: [
       {
-        key: '/child4',
+        key: 'submenu/child4',
         label: 'child4',
       },
       {
-        key: '/child5',
+        key: 'submenu/child5',
         label: 'child5',
+        opened: "true",
         children: [
           {
-            key: '/son2.1',
+            key: 'submenu/son2.1',
             label: 'son2.1',
           },
           {
-            key: '/son2.2',
+            key: 'submenu/son2.2',
             label: 'son2.2',
           }
         ]
