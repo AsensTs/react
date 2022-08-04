@@ -337,12 +337,7 @@ module.exports = function (webpackEnv) {
 
         // alias
         '@': path.resolve(__dirname, '../src'),
-        '@assets': path.resolve(__dirname, '../src/assets'),
-        '@components': path.resolve(__dirname, '../src/components'),
-        '@style': path.resolve(__dirname, '../src/assets/style'),
-        '@store': path.resolve(__dirname, '../src/store'),
-        '@utils': path.resolve(__dirname, '../src/utils'),
-        '@view': path.resolve(__dirname, '../src/view'),
+        '@index': path.resolve(__dirname, '../src/pages/home')
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding

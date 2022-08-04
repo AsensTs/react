@@ -4,7 +4,7 @@ export const COUNTR_FEATURE_KEY = 'counter'
 
 export interface CounterState {
     value: Number,
-    status: 'idle' | 'loading' | 'failed    '
+    status: 'idle' | 'loading' | 'failed'
 }
 
 const initialState: CounterState =  {

@@ -16,7 +16,8 @@ import {
   CaretRightOutlined,
   SyncOutlined,
   LoadingOutlined,
-  BellOutlined
+  BellOutlined,
+  FileOutlined
 } from '@ant-design/icons';
 
 interface Icons {
@@ -40,7 +41,8 @@ export const icons: Icons = {
   CaretRightOutlined: CaretRightOutlined,
   SyncOutlined: SyncOutlined,
   LoadingOutlined: LoadingOutlined,
-  BellOutlined: BellOutlined
+  BellOutlined: BellOutlined,
+  FileOutlined: FileOutlined
 }
 
 export default icons

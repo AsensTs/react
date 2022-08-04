@@ -1,7 +1,7 @@
 // 导入组件
 import React from 'react';
-import Home from '../view/Home'
-import Page1 from '../components/page1'
+import Home from '@index/view/Home'
+import Page1 from '@index/components/page1'
 
 // Ts写法
 const { Router, Route, Switch, Redirect } = require('react-router-dom');  // Ts使用require代替import导入

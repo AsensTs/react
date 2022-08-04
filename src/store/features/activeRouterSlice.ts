@@ -10,7 +10,7 @@ const initialState: ActiveRouter = {
     activeRouter: {}
 }
 
-const activeRouterReducer = createSlice({
+const activeRouter = createSlice({
     name: ACTIVE_ROUTER_KEY,
     initialState,
     reducers: {
@@ -29,5 +29,5 @@ const activeRouterReducer = createSlice({
     }
 })
 
-export const { setActiveRouter } = activeRouterReducer.actions;
-export default activeRouterReducer.reducer;
+export const { setActiveRouter } = activeRouter.actions;
+export default activeRouter.reducer;

@@ -1,14 +1,20 @@
+import Index from '@index/view/Home'
+import Home from '@index/components/home'
+import Page1 from '@index/components/page1'
+import userManagement from '@index/components/userManagement'
+import Expamle from '@index/example/inedx'
 
-import Home from '../components/home'
-import Page1 from '../components/page1'
-import userManagement from '../components/userManagement'
-import Expamle from '../example/inedx'
+import Login from '../pages/login/AppLogin'
 
 export const routes = [
-    { path: "/home", component: Home },
+    { path: "/index", component: Index },
+    { path: '/home', component: Home },
     { path: '/page1', component: Page1 },
+    { path: '/option', component: Page1 },
     { path: '/user_management', component: userManagement },
-    { path: '/example', component: Expamle }
+    { path: '/example', component: Expamle },
+    { path: "/login", component: Login },
+    
 ]
 
 export default routes;

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout } from 'antd'
-import Routes from '../router'
+import Routes from '@/router'
 import Navigation from '../components/common/memu/index'
 import Headers from './Header'
 import Right from './Right'
@@ -37,7 +37,7 @@ class Home extends React.Component {
                       return <Route key={route.path} path={route.path} component={route.component}></Route>
                     })
                   }
-                  <Redirect from='/' to="/home" exact></Redirect>
+                  <Redirect from='/' to="/" exact></Redirect>
                   <Redirect to="/404" exact></Redirect>
                 </Switch>
               </div>

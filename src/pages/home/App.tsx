@@ -1,9 +1,9 @@
 import React from 'react';
-import {store} from './store'
+import {store} from '@/store'
 import { Provider } from 'react-redux'
-import Home from '@view/Home'
-import '@/App.css';
-import '@assets/style/primary-win/index.scss'
+import Home from './view/Home'
+import '@index/App.css';
+import '@/common/assets/style/primary-win/index.scss'
 
 class App extends React.Component {
   render() {

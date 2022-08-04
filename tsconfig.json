@@ -4,12 +4,7 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"],
-      "@assets/*": ["./src/assets/*"],
-      "@components/*": ["./src/components/*"],
-      "@style/*": ["./src/assets/style/*"],
-      "@store/*": ["./src/store/*"],
-      "@utils/*": ["./src/view/*"],
-      "@view/*": ["./src/view/*"]
+      "@index/*": ["src/pages/home/*"],
     },
     "lib": [
       "dom",
