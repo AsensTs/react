@@ -1,6 +1,6 @@
 
 import React from 'react';
-import icons from '@index/utils/icons.ts'
+import icons from '@/common/utils/icons.ts'
 
 /**
  * key:       String  路由地址

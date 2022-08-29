@@ -1,0 +1,39 @@
+@import url("./reset.css");
+body {
+    background-color: #000;
+}
+span {
+    color: #ffffff;
+}
+
+#root, .App, .App-header {
+    height: 100%;
+}
+.login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-content {
+    width: 30%;
+    padding: 48px;
+    background-color: rgba(255, 255, 255, 0.282);
+    display: flex;
+    align-items: center;
+}
+.ant-form {
+    width: 100%;
+}
+.ant-form-item {
+    margin-bottom: 0;
+    margin: 24px 0;
+}
+.ant-form-item-label > label {
+    color: #ffffff;
+}
+.ant-form-item-control {
+    padding-right: 6%;
+}
+

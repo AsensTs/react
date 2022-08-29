@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout } from 'antd'
-import Routes from '@/router'
+import Routes from '@/pages/home/router'
 import Navigation from '../components/common/memu/index'
 import Headers from './Header'
 import Right from './Right'

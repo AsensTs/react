@@ -4,8 +4,6 @@ import Page1 from '@index/components/page1'
 import userManagement from '@index/components/userManagement'
 import Expamle from '@index/example/inedx'
 
-import Login from '../pages/login/AppLogin'
-
 export const routes = [
     { path: "/index", component: Index },
     { path: '/home', component: Home },
@@ -13,7 +11,6 @@ export const routes = [
     { path: '/option', component: Page1 },
     { path: '/user_management', component: userManagement },
     { path: '/example', component: Expamle },
-    { path: "/login", component: Login },
     
 ]
 
