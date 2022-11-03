@@ -6,18 +6,13 @@ import icons from '@/common/utils/icons.ts'
  * key:       String  路由地址
  * label:     String  标题
  * icon:      String  图标
- * opened:    String  是否展开子菜单(必须有子菜单)，默认为 false
- * disabled:  Boolean 是否禁用, 默认为false
+ * opened:    String  是否展开子菜单(必须有子菜单)，默认为 "false",（必须为字符串，否则antd Menu组件报错）
+ * disabled:  Boolean 是否禁用, 默认为 false
  * children:  Array   子菜单，最多三级菜单
  * href(key): String  外链格式：必须要以 http 或 https 开头, 配置在 key 里面
  * 注意：需要配置路由
  * */ 
  const data =  [  
-  {
-    key: '/home',
-    label: 'Home',
-    icon: "HomeOutlined"
-  },
   {
     key: '/page1',
     label: 'Page1',
@@ -38,6 +33,7 @@ import icons from '@/common/utils/icons.ts'
     key: "Group",
     label: 'Group',
     icon: 'AppstoreOutlined',
+    // opened: "true",
     children: [
       {
         key: '/child1',

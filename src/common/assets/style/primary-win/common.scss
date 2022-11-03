@@ -54,6 +54,7 @@
     bottom: 20px;
     left: 50%;
     transform: translateX(-20px);
+    cursor: pointer;
   }
 }
 .app-top {
@@ -110,7 +111,7 @@
         margin: 0 4%; 
       }
       .user {
-        width: 36px;
+        width: 42px;
         text-align: center;
         background-color: $gray-12;
         border-radius: 50%;

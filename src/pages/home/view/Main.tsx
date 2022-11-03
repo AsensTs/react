@@ -1,22 +1,27 @@
 import React from 'react'
 import { Layout } from 'antd'
-import Routes from '@/pages/home/router'
-import Navigation from '../components/common/memu/index'
+import Routes from '@home/router'
+import options from '@home/menus-config'
+import Navigation from '@/common/components/memu/index'
 import Headers from './Header'
 import Right from './Right'
-import options from '../components/common/memu/nav-options'
 
 const { Router, Route, Switch, Redirect } = require('react-router-dom');
 const { createHashHistory } = require('history');
 const { Header, Footer, Content } = Layout;
 const hash: any = createHashHistory();
-class Home extends React.Component {
+class Main extends React.Component {
   state = {
-    options: options
+    options: options,
   }
 
   componentDidMount() {
     console.log("componentDidMount -- 组件挂载完成");
+  }
+
+  logout = () => {
+    console.log("退出登录, 清除cookie");
+    window.location.href = "http://localhost:3000/login.html"
   }
 
   render() {
@@ -24,7 +29,7 @@ class Home extends React.Component {
     return (
       <Router history={hash}>
         <Layout>
-          <Navigation options={options}></Navigation>
+          <Navigation options={options} logout={this.logout}></Navigation>
           <Layout>
             <Header className="header">
               <Headers></Headers>
@@ -37,6 +42,8 @@ class Home extends React.Component {
                       return <Route key={route.path} path={route.path} component={route.component}></Route>
                     })
                   }
+
+                  {/* 自动重定向路由第一个 */}
                   <Redirect from='/' to="/" exact></Redirect>
                   <Redirect to="/404" exact></Redirect>
                 </Switch>
@@ -53,4 +60,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Main;

@@ -6,23 +6,23 @@ const { withRouter } = require("react-router-dom")
 
 interface Props {
     menus: any,
-    opened: String | Boolean,
     history: any,
+    defaultSelectedKeys: Array<any>
 }
 
 interface State {
-    defaultSelectedKeys: any
 }
 
 class NavMenu extends React.Component<Props, State, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            defaultSelectedKeys: [props.menus.data[0].key]
+            defaultSelectedKeys: this.props.defaultSelectedKeys? this.props.defaultSelectedKeys : [props.menus.data[0].key]
         }
     }
 
     componentDidMount() {
+        console.log(this.props.menus.data);
     }
 
     // Default expanded menu
@@ -55,7 +55,6 @@ class NavMenu extends React.Component<Props, State, any> {
                })
             }
         }
-
         return defaultOpenKeys;
     }
 
@@ -64,12 +63,28 @@ class NavMenu extends React.Component<Props, State, any> {
         return menu.opened && typeof menu.opened === "string" ? menu.opened === "true": menu.opened;
     }
 
+    getRouter(menus: Array<any>, key: String): any {
+        for (let i = 0; i < menus.length; i++) {
+            if (menus[i].key !== key) {
+                if (menus[i].children && menus[i].children.length > 0) {
+                    return this.getRouter(menus[i].children, key);
+                }
+            } else {
+                return menus[i];
+            }
+        }
+    }
+
     // Clicked menu
     onClick = (MenuItem: any) => {
         if (MenuItem.key.indexOf('http') !== -1 || MenuItem.key.indexOf('https') !== -1) {
             window.open(MenuItem.key);
         } else {
-            store.dispatch(setActiveRouter(MenuItem.key))
+            // Get the complete routing object
+            let menus = this.props.menus.data;
+            let route = this.getRouter(menus, MenuItem.key);
+            delete route.icon;
+            store.dispatch(setActiveRouter(route))
             this.props.history.push(MenuItem.key);
         }
     }
@@ -80,13 +95,12 @@ class NavMenu extends React.Component<Props, State, any> {
 
     render(): React.ReactNode {
         const { menus } = this.props;
-        const { defaultSelectedKeys } = this.state;
         const mode = menus.mode;
         
         return (
             <Menu
                 defaultOpenKeys={this.defaultOpenKeys(menus)}
-                defaultSelectedKeys={defaultSelectedKeys}
+                {...this.state}
                 mode={mode}
                 items={menus.data}
                 onClick={this.onClick}

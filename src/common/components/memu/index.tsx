@@ -7,6 +7,7 @@ const { Sider } = Layout;
 
 interface Props {
   options: any
+  logout: Function
 }
 interface State {
   collapsed: boolean
@@ -25,6 +26,10 @@ export default class navsider extends Component<Props, State> {
   onCollapse = (collapsed: boolean) => {
     this.setState({ collapsed: !collapsed });
   };
+
+  logout = () => {
+    this.props.logout();
+  }
 
   render() {
     const { options } = this.props;
@@ -56,7 +61,7 @@ export default class navsider extends Component<Props, State> {
               <NavMenu menus={options.menus}></NavMenu>
             </div>
 
-            <div className="login-out">
+            <div className="login-out" onClick={this.logout}>
               <ImportOutlined />
             </div>
           </div>

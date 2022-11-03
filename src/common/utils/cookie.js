@@ -14,7 +14,7 @@ Cookie.remove("sk");
 export default class Cookie {
   add = function (name, value, hours) {
     var life = new Date().getTime();
-    life += hours * 1000 * 60;
+    life += hours * 3600 * 1000;
     var cookieStr = name + "=" + encodeURIComponent(value) + ";expires=" + new Date(life).toGMTString();
     document.cookie = cookieStr;
   };

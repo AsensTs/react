@@ -1,8 +1,7 @@
 import React from 'react';
 import {store} from '@/store'
 import { Provider } from 'react-redux'
-import Home from './view/Home'
-import '@index/App.css';
+import Main from './view/Main'
 import '@/common/assets/style/primary-win/index.scss'
 
 class App extends React.Component {
@@ -10,7 +9,7 @@ class App extends React.Component {
     return (
     <div className="app">
       <Provider store={store}>
-        <Home></Home>
+        <Main></Main>
       </Provider>
     </div>
     );

@@ -2,9 +2,6 @@
 body {
     background-color: #000;
 }
-span {
-    color: #ffffff;
-}
 
 #root, .App, .App-header {
     height: 100%;
@@ -35,5 +32,8 @@ span {
 }
 .ant-form-item-control {
     padding-right: 6%;
+}
+.ant-form-item-control-input span {
+    color: #ffffff;
 }
 

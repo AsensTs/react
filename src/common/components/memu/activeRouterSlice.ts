@@ -16,15 +16,15 @@ const activeRouter = createSlice({
     reducers: {
         setActiveRouter: {
             reducer: (state, action) => {
-                console.log(action);
-                
                 state.activeRouter = action.payload;
             },
             prepare: (active): any => {
+                console.log(active);
+                
                 // 这里return { payload:{ active } } 可以触发reducer方法
                 // 可以在这一步处理数据。
                 return {
-                    payload: active
+                    payload: { active }
                 }
             }
         }

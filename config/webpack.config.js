@@ -316,7 +316,7 @@ module.exports = function (webpackEnv) {
 
         // alias
         '@': path.resolve(__dirname, '../src'),
-        '@index': path.resolve(__dirname, '../src/pages/home')
+        '@home': path.resolve(__dirname, '../src/pages/home')
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding

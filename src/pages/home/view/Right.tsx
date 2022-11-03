@@ -1,5 +1,5 @@
 import React from 'react'
-import RightContent from '../components/common/right'
+import RightContent from '../components/right/index'
 // import { Calendar} from 'antd';
 // import locale from 'antd/lib/calendar/locale/zh_CN.js'
 
