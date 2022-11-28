@@ -1,16 +1,14 @@
 import React from 'react';
 import {store} from "@/store/redux";
 import { Provider } from 'react-redux';
-import Login from "./components/login";
-import 'antd/dist/reset.css';
-import '@/common/assets/style/primary-win/login.scss';
+import Home from "./components/home"
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <Provider store={store}>
-          <Login></Login>
+          <Home></Home>
         </Provider>
       </header>
     </div>

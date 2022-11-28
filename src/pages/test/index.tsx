@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'antd/dist/reset.css';
 import App from './App';
 import reportWebVitals from '@/reportWebVitals';
-const { HashRouter } = require("react-router-dom")
 
 ReactDOM.render(
-  <HashRouter>
+  <React.StrictMode>
     <App />
-  </HashRouter>,
+  </React.StrictMode>,
   document.getElementById('root')
 );
 

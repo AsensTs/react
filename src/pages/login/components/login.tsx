@@ -1,7 +1,6 @@
 import { Button, Checkbox, Form, Input, message } from "antd";
-// import React, { useState } from 'react';
-import { store } from '@/store'
-import { setUsername } from "@/store/features/userSlice"
+import { store } from '@/store/redux'
+import { setUsername } from "@/store/redux/features/userSlice"
 import Cookie from "@/common/utils/cookie"
 
 const cookie = new Cookie();
@@ -12,9 +11,10 @@ const layout = {
 };
 const tailLayout = {
     wrapperCol: { offset: 6, span: 18 },
-  };
+};
 
 const Login: React.FC = () => {
+    
     // 规则验证通过
     const onFinish = (values: any) => {
         console.log('Success:', values);
@@ -32,7 +32,7 @@ const Login: React.FC = () => {
             message.success("登录成功");
             cookie.add("username", username, 3);
             store.dispatch(setUsername(username));
-            window.location.href = "http://localhost:3000/index.html"
+            window.location.href = "/index.html"
         } else {
             message.warning("登录失败！用户名或密码不正确！");
         }

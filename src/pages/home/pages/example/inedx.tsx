@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Welcome } from './component'
+import Refs from "./refs"
+import SuspenseLazy from "./suspense_lazy"
 
 /*
 redux toolkit
@@ -55,7 +57,7 @@ type State = {
   num: Number,
   str: String,
   obj: any,
-  btnType: String
+  btnType: String,
 }
 
 /**
@@ -117,7 +119,7 @@ export default class inedx extends Component<Props, State> {
         no: 1,
         name: "as"
       },
-      btnType: 'red'
+      btnType: 'red',
     }
     // this.changeState = this.changeState.bind(this);
   }
@@ -158,7 +160,15 @@ export default class inedx extends Component<Props, State> {
     this.setState({obj: { no: 2, name: 'ts' }});
   }
 
+  /**
+   * Refs
+   * */ 
+  input: any = null;
+  inputChange = () => {
+    console.dir(this.input);
+  }
 
+  divRef: any = React.createRef();
 
   /**
    * 生命周期
@@ -175,6 +185,7 @@ export default class inedx extends Component<Props, State> {
 
   componentDidMount() {
     console.log("组件挂载完成");
+    console.log("获取Ref dom ----------", this.divRef);
   }
 
   // shouldComponentUpdate，有两个参数nextProps和nextState，表示新的属性和变化之后的state，
@@ -227,6 +238,7 @@ export default class inedx extends Component<Props, State> {
     return (<button style={{backgroundColor: "red"}}>button</button>)
   }
 
+  
 
   render() {
     const { btnType } = this.state;
@@ -251,6 +263,19 @@ export default class inedx extends Component<Props, State> {
 
         <div>{ hello }</div>
         <br/>
+        
+        {/* Refs start*/}
+        <Refs></Refs>
+
+        <form>
+          <input type="text"  ref={(input: any) => { this.input = input }} onChange={this.inputChange}/>
+        </form>
+
+        <div ref={this.divRef}>123</div>
+        {/* Refs end*/}
+
+        {/* Suspense & lazy */}
+        <SuspenseLazy></SuspenseLazy>
 
         <div>
           <strong>State Using</strong>

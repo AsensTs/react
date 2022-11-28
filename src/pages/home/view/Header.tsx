@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Icons from '@/common/utils/icons'
 import Setting from '../components/setting/index'
-import { store } from "@/store"
-import { getActiveRouter } from "@/store/features/activeRouterSlice"
+import { store } from "@/store/redux"
+import { getActiveRouter } from "@/store/redux/features/activeRouterSlice"
 import Cookie from "@/common/utils/cookie"
 
 const cookie = new Cookie();
@@ -22,15 +22,18 @@ export default class Header extends Component<Props, State> {
   }
 
   componentDidMount() {
-    this.setState({
-      username: cookie.get("username")
-    })
-
-    store.subscribe(() => {
+    if (getActiveRouter(store)) {
       this.setState({
+        username: cookie.get("username"),
         activeRouter: getActiveRouter(store).label
       })
-    })
+  
+      store.subscribe(() => {
+        this.setState({
+          activeRouter: getActiveRouter(store).label
+        })
+      })
+    }
   }
 
   handleClickSetting = () => {

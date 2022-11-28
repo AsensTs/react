@@ -19,6 +19,11 @@ import icons from '@/common/utils/icons.ts'
     icon: "FileOutlined"
   },
   {
+    key: '/example',
+    label: 'Example',
+    icon: "FileOutlined"
+  },
+  {
     key: '/options',
     label: 'Options',
     icon: "FileOutlined"

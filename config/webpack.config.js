@@ -172,6 +172,7 @@ module.exports = function (webpackEnv) {
     entry: {
       index: isEnvDevelopment && !shouldUseReactRefresh ? [ webpackDevClientEntry, paths.appIndexJs,] : paths.appIndexJs,
       login: isEnvDevelopment && !shouldUseReactRefresh ? [ webpackDevClientEntry, paths.appLoginJs,] : paths.appLoginJs,
+      test: isEnvDevelopment && !shouldUseReactRefresh ? [ webpackDevClientEntry, paths.appTestJs,] : paths.appTestJs,
     },
     output: {
       // The build folder.
@@ -576,6 +577,33 @@ module.exports = function (webpackEnv) {
             template: paths.appHtml,
             filename: 'login.html',
             chunks: ['login'],
+          },
+          isEnvProduction
+            ? {
+                minify: {
+                  removeComments: true,
+                  collapseWhitespace: true,
+                  removeRedundantAttributes: true,
+                  useShortDoctype: true,
+                  removeEmptyAttributes: true,
+                  removeStyleLinkTypeAttributes: true,
+                  keepClosingSlash: true,
+                  minifyJS: true,
+                  minifyCSS: true,
+                  minifyURLs: true,
+                },
+              }
+            : undefined
+        )
+      ),
+      new HtmlWebpackPlugin(
+        Object.assign(
+          {},
+          {
+            inject: true,
+            template: paths.appHtml,
+            filename: 'test.html',
+            chunks: ['test'],
           },
           isEnvProduction
             ? {

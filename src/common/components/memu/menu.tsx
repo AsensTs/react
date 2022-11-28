@@ -1,7 +1,7 @@
 import React from 'react'
 import { Menu } from 'antd'
-import { store } from '@/store'
-import { setActiveRouter } from '@/store/features/activeRouterSlice'
+import { store } from '@/store/redux'
+import { setActiveRouter } from '@/store/redux/features/activeRouterSlice'
 const { withRouter } = require("react-router-dom")
 
 interface Props {
@@ -17,12 +17,20 @@ class NavMenu extends React.Component<Props, State, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            defaultSelectedKeys: this.props.defaultSelectedKeys? this.props.defaultSelectedKeys : [props.menus.data[0].key]
+            defaultSelectedKeys: this.props.defaultSelectedKeys? this.props.defaultSelectedKeys : [props.menus.data[0].key],
+            selectedKeys: ""
         }
     }
 
     componentDidMount() {
-        console.log(this.props.menus.data);
+        setTimeout(() => {
+            const { history, menus } = this.props;
+            let route = this.getRouter(menus.data, history.location.pathname);
+            store.dispatch(setActiveRouter(route))
+            this.setState({
+                selectedKeys: this.props.history.location.pathname
+            })
+        })
     }
 
     // Default expanded menu
@@ -67,10 +75,14 @@ class NavMenu extends React.Component<Props, State, any> {
         for (let i = 0; i < menus.length; i++) {
             if (menus[i].key !== key) {
                 if (menus[i].children && menus[i].children.length > 0) {
-                    return this.getRouter(menus[i].children, key);
+                    let route = this.getRouter(menus[i].children, key)
+                    if (route) delete route.icon;
+                    return route;
                 }
             } else {
-                return menus[i];
+                let route = menus[i]
+                if (route) delete route.icon;
+                return route;
             }
         }
     }
@@ -83,14 +95,15 @@ class NavMenu extends React.Component<Props, State, any> {
             // Get the complete routing object
             let menus = this.props.menus.data;
             let route = this.getRouter(menus, MenuItem.key);
-            delete route.icon;
             store.dispatch(setActiveRouter(route))
             this.props.history.push(MenuItem.key);
         }
     }
 
     onSelect = (MenuItem: any) => {
-        console.log(MenuItem);
+        this.setState({
+            selectedKeys: MenuItem.key
+        })
     }
 
     render(): React.ReactNode {

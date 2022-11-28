@@ -1,20 +1,15 @@
-import React, { Component } from 'react'
+import { countStore } from "@/store/mobx/index"
+import { observer } from 'mobx-react-lite'
 
-interface Props {
-  
-}
-interface State {
-  
+function page1() {
+  return (
+    <div>
+      page1
+      {countStore.count}
+      {countStore.num}
+      <button onClick={countStore.addCount}>点我+1</button>
+    </div>
+  )
 }
 
-export default class index extends Component<Props, State> {
-  state = {}
-
-  render() {
-    return (
-      <div>
-        page1
-      </div>
-    )
-  }
-}
+export default observer(page1);

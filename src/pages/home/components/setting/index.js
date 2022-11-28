@@ -7,7 +7,7 @@ const Setting  = (props) => {
   }
 
   return (
-    <Drawer title="SETTING" placement="right" onClose={handleCloseSetting} visible={props.visible} key="right">
+    <Drawer title="SETTING" placement="right" onClose={handleCloseSetting} open={props.visible} key="right">
       <p>Some contents...</p>
       <p>Some contents...</p>
       <p>Some contents...</p>

@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 /**
 类 Cookie
 将此类放入用到的js文件中即可使用

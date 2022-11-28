@@ -91,6 +91,7 @@ export default class navmenu extends React.Component<Props, State, any> {
     let list = menus.data;
     let mode = menus.mode ? menus.mode : 'inline';   // vertical | horizontal | inline
     let theme = menus.theme ? menus.theme : 'light'; // light | dark
+    console.log(theme);
     
     return (
       <div>

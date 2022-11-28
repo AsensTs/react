@@ -35,10 +35,11 @@ export default class navsider extends Component<Props, State> {
     const { options } = this.props;
     const { collapsed } = this.state;
     const collapse = options && undefined === options.collapse ? true : options.collapse ? true : false;
+    let theme = options.theme ? options.theme : 'light'; // light | dark
 
     return (
       <div className="nav-sider">
-        <Sider className="sider" collapsed={collapsed}>
+        <Sider className="sider" collapsed={collapsed} theme={theme}>
           <div className="nav-bar">
             <div className="app-top">
               <div className="app-logo"><img src={options.logo} alt="logo" style={{display: options.logo?"block":"none"}} /></div> 
