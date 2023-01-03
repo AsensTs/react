@@ -9,7 +9,7 @@ interface Route {
 }
 
 export const routes: Array<Route> = [
-    { path: '/page1', component: Page1,},
+    { path: '/page1', component: Page1},
     { path: '/options', component: Page1, redirect: "/page1"},
     { path: '/user_management', component: userManagement },
     { path: '/example', component: Expamle },

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Layout, Button } from 'antd'
 import { MenuUnfoldOutlined, MenuFoldOutlined, ImportOutlined} from '@ant-design/icons';
 import NavMenu from './menu'
+import "./menus.scss"
 
 const { Sider } = Layout;
 

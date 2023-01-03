@@ -2,7 +2,7 @@ import React from 'react'
 import { Layout } from 'antd'
 import RouterView from '@home/router/router-view'
 import options from '@home/menus-config'
-import Navigation from '@/common/components/memu/index'
+import Menus from '@/common/components/menus/index'
 import Headers from './Header'
 import Right from './Right'
 
@@ -25,7 +25,7 @@ class Main extends React.Component {
     const { options } = this.state;
     return (
       <Layout>
-        <Navigation options={options} logout={this.logout}></Navigation>
+        <Menus options={options} logout={this.logout}></Menus>
         <Layout>
           <Header className="header">
             <Headers></Headers>
